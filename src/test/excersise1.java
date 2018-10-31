@@ -9,82 +9,32 @@ public class excersise1 {
 		exr.practice06();
 	}
 
+	public int[] inputNumbers(int length) {
+		int[] arr = new int[length];
+		for(int i=0; i<arr.length; i++){
+			arr[i] = Integer.parseInt(JOptionPane.showInputDialog("ìž…ë ¥"));
+		}
+		return arr;
+	}
 	public void practice06(){
-		System.out.println("ÀÔ·Â.");
+		int k = Integer.parseInt(JOptionPane.showInputDialog("ìž…ë ¥"));
+		int[] scoreArray = inputNumbers(k);
 
-		int k=0;
-		k =  Integer.parseInt(JOptionPane.showInputDialog("ÀÔ·Â"));
-		System.out.println(k);
-
-
-
-		int[] scoreArray = new int[k];
-		for(int i=0; i<scoreArray.length; i++){
-			scoreArray[i] = Integer.parseInt(JOptionPane.showInputDialog("ÀÔ·Â"));
-			System.out.print(scoreArray[i]);
-
-		}
-		System.out.println();
-		System.out.println("ÀÔ·Â");
-
-		int n=0;
-		n =  Integer.parseInt(JOptionPane.showInputDialog("ÀÔ·Â"));
-		System.out.println(n);
-
-
-
-		int[] scoreArray1 = new int[n];
-		for(int j=0; j<scoreArray1.length; j++){
-			scoreArray1[j] = Integer.parseInt(JOptionPane.showInputDialog("ÀÔ·Â"));
-
-			System.out.print(scoreArray1[j]);
-
-
-		}
-		System.out.println();
-
-		int m=k;
-		System.out.println(scoreArray[m-1]);
-
-		int a=n;
-		System.out.println(scoreArray1[a-1]);
+		int n = Integer.parseInt(JOptionPane.showInputDialog("ìž…ë ¥"));
+		int[] scoreArray1 = inputNumbers(n);
 		
-	/*	int count =0;
-		for(m=0; m<k; m++){
-			for(a=0; a<n; a++) {
-			if(scoreArray[m]==scoreArray1[n-1]){
-				count ++;
-				
-			}
-			}
-		}
-		System.out.println("°°Àº¼ö´Â" + count + "°³ ÀÔ´Ï´Ù."); */
-		
-		
-	/*	for( m=scoreArray1[0]; m<=n; m++) {
-			for(int v=scoreArray[0]; v<=k; v++) {
-				
-				if (m==v) {
-					
-					System.out.print( "1");
-					
+		for(int i=0; i<n; i++) {
+			boolean hasSame = false;
+			for(int v=0; v<k; v++) {
+				if (scoreArray1[i]==scoreArray[v]) {
+					System.out.println("1");
+					hasSame = true;
+					break;
 				}
-				else 
-					
-				System.out.print("0");
-
-			}  
-			
-			
-
-		}	*/
-		
-		
-		
-		
-
+			}
+			if(hasSame == false) {
+				System.out.println("0");
+			}
+		}
 	}
 }
-
-
-
